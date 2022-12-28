@@ -1,5 +1,5 @@
 import React, { useEffect } from "react";
-import { withRouter } from "react-router-dom";
+import { withRouter, useParams } from "react-router-dom";
 import { useState } from "react";
 import "./Login.css";
 import {
@@ -17,6 +17,7 @@ function Login(props) {
   const [error, setError] = useState("");
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
+  const layout = new URLSearchParams(props.location.search).get("layout") || 1;
 
   useEffect(() => {
     if (location.state) {
@@ -68,9 +69,12 @@ function Login(props) {
     setPassword(evt.target.value);
   };
 
+  const secondaryLayout = layout == 2;
+  console.log(props)
+
   return (
     <div>
-      <div className="login_logo" />
+      <div className={secondaryLayout ? "login_logo_2" : "login_logo"} />
 
       <div className="login_wrapper">
         <div className="login_wrapper-inner">
@@ -83,7 +87,7 @@ function Login(props) {
                   value={username}
                   onChange={handleUserChange}
                   testId="username"
-                  placeholder="Username"
+                  placeholder={secondaryLayout ? "username" : "Username"}
                   // Custom
                   id="user-name"
                   name="user-name"
@@ -109,7 +113,7 @@ function Login(props) {
                 <SubmitButton
                   // `btn_action` has no style function
                   // but is there for backwards compatibility
-                  customClass="btn_action"
+                  customClass={secondaryLayout ? "btn_action_2" : "btn_action"}
                   testId="login-button"
                   value="Login"
                 />
@@ -117,19 +121,19 @@ function Login(props) {
             </div>
           </div>
 
-          <div className="bot_column" />
+          <div className={"bot_column " + (secondaryLayout ? "bot2" : "")} />
         </div>
         <div className="login_credentials_wrap">
           <div className="login_credentials_wrap-inner">
             <div id="login_credentials" className="login_credentials">
-              <h4>Accepted usernames are:</h4>
+              <h4>Accepted username{secondaryLayout ? '' : 's'} are:</h4>
               standard_user
               <br />
               locked_out_user
               <br />
-              problem_user
+              {!secondaryLayout && 'problem_user'}
               <br />
-              performance_glitch_user
+              {!secondaryLayout && 'performance_glitch_user'}
               <br />
             </div>
             <div className="login_password">

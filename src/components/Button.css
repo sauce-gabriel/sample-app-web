@@ -27,6 +27,12 @@
   border: 2px solid #e2231a;
   color: #fff;
 }
+.btn_action_2 {
+  background-color: #b14104;
+  border: 4px solid #e2231a;
+  color: #fff;
+  width: 120px;
+}
 
 .btn_secondary.back {
   position: relative;
