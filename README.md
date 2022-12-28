@@ -4,12 +4,17 @@ This is the Sauce Labs Sample Application which is designed to be used from desk
 ![sample-app-web workflow](https://github.com/saucelabs/sample-app-web/actions/workflows/sample-app-web.yml/badge.svg)
 [![codecov](https://codecov.io/gh/saucelabs/sample-app-web/branch/master/graph/badge.svg?token=Q4UsgDSRd3)](https://codecov.io/gh/saucelabs/sample-app-web)
 
-- [Setup](#setup)
-  - [Requirements](#requirements)
-  - [Build](#build)
-  - [Storybook](#storybook)
-- [Test](#test)
-- [Deploy](#deploy)
+- [What is this codebase?](#what-is-this-codebase)
+  - [Setup](#setup)
+    - [Requirements](#requirements)
+    - [Build](#build)
+    - [Storybook](#storybook)
+  - [Test](#test)
+    - [E2E](#e2e)
+      - [Testing locally](#testing-locally)
+      - [Testing on Sauce Labs](#testing-on-sauce-labs)
+    - [Visual Component Testing](#visual-component-testing)
+  - [Deploy](#deploy)
 
 ## Setup
 ### Requirements
@@ -83,7 +88,6 @@ Each PR to master will also test the components with the `test.storybook.ci`-com
 ## Deploy
 
 Merges to master will automatically deploy to:
-* https://www.saucedemo.com
-* https://saucelabs.github.io/sample-app-web/
+* https://sauce-gabriel.github.io/sample-app-web/
 
 See: [.github/workflows/github-pages.yml GitHub Action](.github/workflows/github-pages.yml)
