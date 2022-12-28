@@ -1,6 +1,6 @@
 {
   "name": "sample-app-web",
-  "homepage": "https://sauce-gabriel.github.io/sample-app-web/",
+  "homepage": "https://sauce-gabriel.github.io/sample-app-web",
   "version": "3.0.0",
   "private": true,
   "dependencies": {
