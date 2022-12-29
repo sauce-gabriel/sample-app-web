@@ -87,7 +87,7 @@ function Login(props) {
                   value={username}
                   onChange={handleUserChange}
                   testId="username"
-                  placeholder={secondaryLayout ? "username" : "Username"}
+                  placeholder="Username"
                   // Custom
                   id="user-name"
                   name="user-name"
@@ -115,7 +115,7 @@ function Login(props) {
                   // but is there for backwards compatibility
                   customClass={secondaryLayout ? "btn_action_2" : "btn_action"}
                   testId="login-button"
-                  value="Login"
+                  value={secondaryLayout ? "Sign In" : "Login"}
                 />
               </form>
             </div>
@@ -126,7 +126,7 @@ function Login(props) {
         <div className="login_credentials_wrap">
           <div className="login_credentials_wrap-inner">
             <div id="login_credentials" className="login_credentials">
-              <h4>Accepted username{secondaryLayout ? '' : 's'} are:</h4>
+              <h4>Accepted usernames are:</h4>
               standard_user
               <br />
               locked_out_user
